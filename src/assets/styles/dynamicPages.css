@@ -133,8 +133,87 @@ iframe{
     box-shadow: var(--shadow-box);
 }
 
+/* About Page */
+.about-page{
+    display: flex;
 
+}
+.about-first{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container-info{
+    display: flex;
+}
+.card-info{
+    width: 100%;
+    background: linear-gradient(to left , var(--main-color),var(--yellow-color));
+    border-radius: 10px;
+    color: var(--light-color);
+}
+.card-info div:nth-child(2){
+    font-size: var(--font-size-xl);
+    font-weight: 800;
+}
+.card-info path{
+    fill: var(--light-color);
+}
+.card-info h3{
+    font-size: var(--font-size-l);
+    font-weight: 800;
+    text-transform: capitalize;
+    text-align: center;
+}
+.upDiv{
+    animation: upDiv forwards 0.5s linear;
+    transform: translateY(-20px);
+}
+@keyframes upDiv {
+    from{
+        transform: translateY(-20px);
 
+    }to{
+        transform: translateY(0);
+    }
+}
+.about-second{
+    width: 100%;
+
+}
+.about-second h1{
+    font-size: var(--font-size-3xl);
+    font-weight: 700;
+    line-height: 3rem;
+    color: var(--second-color);
+}
+.about-second h2{
+    color: var(--main-color);
+    font-size: var(--font-size-s);
+    font-weight: 600;
+}
+.first-row-info{
+    display: flex;
+    width: 100%;
+}
+.second-row-info{
+    display: flex;
+    width: 100%;
+}
+@media (max-width:1200px) {
+    /* about-page */
+    .about-page {
+        flex-direction: column-reverse;
+        gap: 15px;
+    }
+    .container-info{
+        display: block;
+    }
+    .first-row-info{
+        margin-bottom: 25px;
+    }
+}
 @media (max-width:800px) {
     /* Banner */
     .banner-bg{
@@ -146,6 +225,7 @@ iframe{
     .first-contact{
         margin-bottom: 15px;
     }
+
 }
 
 @media (max-width:700px) {
@@ -165,7 +245,14 @@ iframe{
     /* Banner */
     .banner-bg{
     /* background: url("../images/bg_large.jpg"); */
-    height: 300px;}
+    height: 300px;
+
+}
+    /* About Page */
+    .years-logo {
+        width: 300px;
+        height: 200px;
+    }
 }
 
 @media (max-width:450px) {
@@ -180,4 +267,26 @@ iframe{
     .form-contact p{
         font-size: var(--font-size-xs);
     }
+    /* About Page */
+    .about-second h1{
+        font-size: var(--font-size-xxl);
+        line-height: 2rem;
+    }
+    .about-second p{
+        font-size: var(--font-size-xs);
+    }
+    .first-row-info{
+        flex-wrap: wrap;
+    }
+    .second-row-info{
+        flex-wrap: wrap;
+    }
+}
+@media (max-width:320px) {
+    /* About Page */
+    .years-logo {
+        width: 250px;
+        height: 200px;
+    }    
+
 }

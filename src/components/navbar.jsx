@@ -11,7 +11,7 @@ const Navbar = ()=>{
               setIsScroll(false); // Set it back to false when the scroll is less than 50px
             }
           };
-      
+       
           // Add event listener to handle scroll
           window.addEventListener('scroll', handleScroll);
       
@@ -24,10 +24,10 @@ const Navbar = ()=>{
         name : "Home",
         link : "/"
     },
-    // {
-    //     name : "About",
-    //     link : "/about"
-    // },
+    {
+        name : "About",
+        link : "/about"
+    },
     {
         name : "sevices",
         link : "#services"

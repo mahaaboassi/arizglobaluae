@@ -1,7 +1,5 @@
 import { useRef, useState , useEffect} from "react"
 import Banner from "../components/banner"
-import Footer from "../components/footer"
-import Navbar from "../components/navbar"
 import { contactInfo } from "../data/data"
 import { Helmet } from "react-helmet-async"
 
@@ -31,7 +29,6 @@ const Contact = ()=>{
             <meta name="description" content="Get in touch with Ariz Global for digital marketing, web development, and creative design services." />
             <link rel="canonical" href="https://arizglobal.com/contact" />
         </Helmet>
-        <Navbar/>
         <Banner firstPath={"Home"} link={"/"} secondPath={"Contact Us"}/>
         <div className="map w-full">
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3616.063995019356!2d55.170309375395014!3d24.997941339742585!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f69e8137cf3dd%3A0x85beecae1d102683!2sAriz%20Global!5e0!3m2!1sen!2sae!4v1746170669837!5m2!1sen!2sae"   allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
@@ -66,7 +63,6 @@ const Contact = ()=>{
                 <div><button className="w-full">submit</button></div>
             </form>
         </div>
-        <Footer/>
     </div>)
 }
 
