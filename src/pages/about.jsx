@@ -189,7 +189,7 @@ const About = ()=>{
                     </div>))}
                 </div>
                 <div className="second-row-info gap-5 sm:gap-10">
-                    {data.map((e,idx)=>(<div style={{
+                    {secondrow.map((e,idx)=>(<div style={{
                         animationDelay: `${idx*0.3+0.5}s`
                     }} className={`p-5 card-info flex flex-col items-center justify-center gap-5 ${isAppeare ?"upDiv":""}`} key={`Cards_Our_company_${e.name}_${idx}`}>
                         <div>{e.icon}</div>
