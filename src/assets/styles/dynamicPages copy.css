@@ -1,7 +1,8 @@
 /* Banner */
 .banner-bg{
-    background: var(--dark-color); 
-    height: 350px;
+    background: url("../images/bg_large.jpg"); 
+    /* background: url("../images/3dSvg 1.png"); */
+    height: 500px;
     background-repeat: no-repeat;
     background-size: cover;
     display: flex;
@@ -17,28 +18,9 @@
     left: 0;
     height: 100%;
     width: 100%;
-    background: linear-gradient(to right , #0b081dff 20%, #0b081d00);  
+    background-color: rgba(0, 0, 0, 0.688);  
     z-index: 1;
   }
-.lines{
-   display: flex;
-   gap: 50px; 
-}
-.line{
-    width: 1.5px;
-    background-color: rgba(252, 252, 252, 0.1);
-    height: 500px;
-    animation: play 3.5s infinite linear;
-}
-@keyframes play {
-    from {
-        transform: translateY(-100px);
-      }
-      to {
-        transform: translateY(100vh);
-      }  
-}
-
 .banner-bg .banner-path{
     position: absolute;
     bottom: 0;
@@ -68,13 +50,13 @@ iframe{
     position: relative;
 }
 .up-div{
-    animation: upMove 1s forwards ;
+    animation: upMove 0.3s forwards ;
 }
 @keyframes upMove {
     from{
         margin-top: 0px;
     }to{
-        margin-top: -100px;
+        margin-top: -50px;
     }
 }
 .card-content-contact{
@@ -187,11 +169,11 @@ iframe{
 }
 .upDiv{
     animation: upDiv forwards 0.5s linear;
-    transform: translateY(50px);
+    transform: translateY(-20px);
 }
 @keyframes upDiv {
     from{
-        transform: translateY(50px);
+        transform: translateY(-20px);
 
     }to{
         transform: translateY(0);
@@ -220,56 +202,6 @@ iframe{
     display: flex;
     width: 100%;
 }
-/* News Page */
-.card-news-animation{
-    animation: upDiv 0.5s forwards linear;
-}
-.card-news-page{
-    width: 400px;
-}
-.container-card-news-page{
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap:20px
-}
-/* 404 Page */
-.page-404{
-    background-color: var(--dark-color);
-    height: 700px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    overflow: hidden;
-}
-.page-404 h1{
-    color: var(--light-color);
-    font-size: 15rem;
-    font-weight: 700;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-
-}
-.card-404{
-    position: absolute;
-    top: 70%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    z-index: 2;
-    background-color: #0b081da8;
-    backdrop-filter: blur(1px);
-    box-shadow: 5px 5px 9px 0px #ffffff40;
-    border-radius: 10px;
-    color: var(--light-color);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 300px;
-    height: 200px;
-}
 @media (max-width:1200px) {
     /* about-page */
     .about-page {
@@ -283,18 +215,10 @@ iframe{
         margin-bottom: 25px;
     }
 }
-@media (max-width:900px) {
-    /* News Page */
-        .card-news-page{
-            width: 350px;
-        }
-
-    
-}
 @media (max-width:800px) {
     /* Banner */
     .banner-bg{
-        height: 250px;}
+        height: 400px;}
     /* Contact Page */
     .form-contact{
         display: block;
@@ -302,11 +226,6 @@ iframe{
     .first-contact{
         margin-bottom: 15px;
     }
-    /* News page */
-    .card-news-page{
-        width: 300px;
-    }
-
 
 }
 
@@ -327,7 +246,7 @@ iframe{
     /* Banner */
     .banner-bg{
     /* background: url("../images/bg_large.jpg"); */
-    height: 250px;
+    height: 300px;
 
 }
     /* About Page */
@@ -335,32 +254,8 @@ iframe{
         width: 300px;
         height: 200px;
     }
-    /* News Page */
-    .card-news-page{
-        width: 100%;
-        margin-bottom: 20px;
-    }
-
-    .container-card-news-page{
-        display: block;
-    }
-
 }
-@media (max-width:600px) {
-    /*404 Page  */
-    .page-404{
-        height: 500px;
-    }
-    .page-404 h1{
-        color: var(--light-color);
-        font-size: 10rem;
-    }
-    .card-404{
-        top: 65%;
-        width: 250px;
-        height: 150px;
-    }
-}
+
 @media (max-width:450px) {
     /* contact Page */
     .form-contact h3{
@@ -394,18 +289,5 @@ iframe{
         width: 250px;
         height: 200px;
     }    
-    /* 404 Page */
-    .page-404{
-        height: 450px;
-    }
-    .page-404 h1{
-        color: var(--light-color);
-        font-size: 8rem;
-    }
-    .card-404{
-        top: 70%;
-        width: 200px;
-        height: 150px;
-    }
 
 }

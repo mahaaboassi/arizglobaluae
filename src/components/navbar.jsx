@@ -22,21 +22,45 @@ const Navbar = ()=>{
     },[])
     const data = [{
         name : "Home",
-        link : "/"
+        link : "/",
+        children : []
     },
     {
         name : "About",
-        link : "/about"
+        link : "/about",
+        children : []
     },
+    // {
+    //     name : "sevices",
+    //     link : "",
+    //     children : [{
+    //         name : "Content Marketing",
+    //         link :"/content-marketing"
+    //     },{
+    //         name : "Graphic Design",
+    //         link :"/graphic-design"
+    //     },{
+    //         name : "Paid Advertising",
+    //         link :"/paid-advertising"
+    //     },{
+    //         name : "Social Media Marketing",
+    //         link :"/social-media-marketing"
+    //     },{
+    //         name : "SEO",
+    //         link :"/seo"
+    //     },{
+    //         name : "Website Development",
+    //         link :"/website-development"
+    //     }]
+    // },
     {
-        name : "sevices",
-        link : "#services"
-    },{
         name : "news",
-        link : "#news"        
+        link : "/news",
+        children : []      
     },{
         name : "contact",
-        link : "/contact"
+        link : "/contact",
+        children : []
     }]
 
    
@@ -187,11 +211,14 @@ const Navbar = ()=>{
                     <li>{e.name}</li>
                 </NavLink>))} */}
                 {data.map((e, idx) =>
-                    e.link.startsWith("#") ? (
-                    <a key={idx} href={e.link}>
-                        <li>{e.name}</li>
-                    </a>
-                    ) : (
+                    e.children.length>0 ? (
+                    <Link to={"/#services"}>
+                        <li className="menu-container" key={idx}>
+                            {e.name}
+                        </li>
+                    </Link>
+                    ) : 
+                    (
                     <NavLink key={idx} to={e.link} className={({ isActive }) => (isActive ? "active" : "")}>
                         <li>{e.name}</li>
                     </NavLink>

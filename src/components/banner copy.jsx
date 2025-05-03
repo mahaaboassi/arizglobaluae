@@ -2,18 +2,7 @@ import { Link } from "react-router-dom"
 
 const Banner = ({firstPath,link, secondPath })=>{
     return(<div className="banner-bg shadow-xl">
-        <div className="lines">
-                {Array.from({ length: 1000 }).map((_, idx) => {
-                        const height = Math.floor(Math.random() * 400) + 100; // 100px to 500px
-                        const delay = Math.random() * 3; // 0s to 3s
-                    return <div key={`Line_${idx}`}  style={{
-                        height: `${height}px`,
-                        animationDelay: `${delay}s`,
-                      }} className="line" ></div>
-                })}
-            </div>
         <div className="banner-path p-5 flex right-4 sm:right-10 items-center gap-2">
-            
                 <Link to={link}> <div className="first-path">{firstPath}</div> </Link>
                 {secondPath && <div>
                     <svg xmlns="http://www.w3.org/2000/svg" width="14" height="18" viewBox="0 0 14 18" fill="none">

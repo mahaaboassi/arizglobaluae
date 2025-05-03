@@ -1,11 +1,13 @@
 const Accordion = ({onClick,isOpen,question,answer})=>{
     return <div className={`container p-3`}>
             <div onClick={onClick} className={`target flex items-center gap-5 cursor-pointer`}>
-             <div className={`icon`}>
-                        <div className={`${isOpen?"icon-first-active":"icon-first"}`}></div>
-                        <div className={`icon-second`}></div>
+                <div style={{width:"fit-content"}} >
+                    <div className={`icon`}>
+                            <div className={`${isOpen?"icon-first-active":"icon-first"}`}></div>
+                            <div className={`icon-second`}></div>
+                    </div>
                 </div>
-                <div> {question} </div>
+                <div > {question} </div>
                 
             </div>
             <p className={`content-accordion flex items-center ${isOpen ? "content-active":""}`}>

@@ -20,7 +20,7 @@ const About = ()=>{
         return () => {
             if (targetRef.current) observer.unobserve(targetRef.current);
         };
-        }, [targetRef ]);
+    }, [targetRef ]);
     const svg = <svg className="years-logo" xmlns="http://www.w3.org/2000/svg" width="502" height="370" viewBox="0 0 502 370" fill="none">
     <g clipPath="url(#clip0_344_2245)">
     <path d="M172.5 347C82.8629 347 10 274.137 10 184.5C10 94.8629 82.8629 22 172.5 22C262.137 22 335 94.8629 335 184.5C335 274.137 262.137 347 172.5 347ZM172.5 32.4839C88.629 32.4839 20.4839 100.629 20.4839 184.5C20.4839 268.371 88.629 336.516 172.5 336.516C256.371 336.516 324.516 268.371 324.516 184.5C324.516 100.629 256.371 32.4839 172.5 32.4839Z" fill="#C3996B"/>

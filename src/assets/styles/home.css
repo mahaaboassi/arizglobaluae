@@ -329,7 +329,7 @@ nav ul .active{
     position: relative 
 }
 .card-news{
-    width: 400px;
+    width: 100%;
     background-color: var(--light-color);
     display: flex;
     flex-direction: column;
@@ -343,6 +343,21 @@ nav ul .active{
     overflow: hidden;
     border-top-right-radius: 10px;
     border-top-left-radius: 10px;
+}
+
+.swiper-button-next, .swiper-rtl .swiper-button-prev ,.swiper-button-prev, .swiper-rtl .swiper-button-next{
+    width: 40px !important;
+    height: 40px !important;
+    border-radius: 50% !important;
+    background: linear-gradient(to left , var(--main-color), var(--yellow-color)) ;
+
+}
+.swiper-button-prev:after, .swiper-button-next:after{
+    font-size:12px !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--light-color);
 }
 .category{
     color: var(--more-grey-color);
@@ -363,42 +378,8 @@ nav ul .active{
     font-size: var(--font-size-xs);
     color: var(--more-grey-color);
 }
-.news:hover .content-arrows{
-    display: flex;
-}
-.content-arrows{
-    position: absolute;
-    top: 60%;
-    transform: translateY(-50%);
-    right: 0;
-    left :0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;            
-    z-index: 5;
-    display: none;
-}
-.last,.next{
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background-color: var(--light-color);
-    transition: 0.4s;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
 
-}
-.last:hover ,.next:hover{
-    background : linear-gradient(to Right , var(--main-color), var(--yellow-color));
-}
-.last:hover path,.next:hover path{
-    fill: var(--light-color);
-}
-.last{
-    transform: rotate(-180deg);
-}
+
 /* Footer */
 .first-footer{
     background-color: var(--dark-color);
