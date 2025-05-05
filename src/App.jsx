@@ -10,10 +10,10 @@ import Page_404 from './pages/404page'
 import NewsDetails from './pages/newsDetails'
 import SEOPage from './pages/services/seo'
 import ContentMarketing from './pages/services/contentMarketing'
-import GraphicDesign from './pages/services/graphicdesign'
+import GraphicDesign from './pages/services/graphicDesign'
 import PaidAds from './pages/services/paidAds'
 import SocialMedia from './pages/services/socialMedia'
-import WebsiteDevelopment from './pages/services/webdevelopment'
+import WebsiteDevelopment from './pages/services/webDevelopment'
 
 
 

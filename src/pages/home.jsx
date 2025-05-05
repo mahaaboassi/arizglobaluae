@@ -3,7 +3,6 @@ import FAQs from "../components/faq"
 import HeroSection from "../components/hero"
 import News from "../components/news"
 import Services from "../components/services"
-import Whatsapp from "../components/whatsapp"
 
 const Home = ()=>{
     return(<div>
@@ -17,7 +16,6 @@ const Home = ()=>{
         <News/>
         <FAQs/>
         
-        <Whatsapp/>
     </div>)
 
 }

@@ -14,7 +14,9 @@ const About = ()=>{
             },
         //   { rootMargin }
         );
-    
+        
+        window.scrollTo({top: 0, behavior: 'smooth' });
+
         observer.observe(targetRef.current);
     
         return () => {

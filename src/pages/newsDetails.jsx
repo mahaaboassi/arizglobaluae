@@ -9,6 +9,8 @@ const NewsDetails = ()=>{
     const [data, setData ] = useState({})
     useEffect(()=>{
         const existData = news.find(e=> e.link == link)
+        window.scrollTo({top: 0, behavior: 'smooth' });
+
         if(!existData)
             navigate("/page-not-found")
         setData(existData)

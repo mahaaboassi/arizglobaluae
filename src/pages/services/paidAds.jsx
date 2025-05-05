@@ -1,14 +1,19 @@
+import { useEffect } from "react";
 import Banner from "../../components/banner"
 import HeadingForDynamic from "../../components/headingForDynamic"
+import Start from "../../components/start";
 
 const PaidAds = ()=>{
+    useEffect(()=>{
+        window.scrollTo({top: 0, behavior: 'smooth' });
+    },[])
     return(
     <div className="web">
         <Banner firstPath={"Home"} link={"/"} secondPath={"Paid advertising"} />
         <div className="px-4 sm:px-10 my-10">
             <HeadingForDynamic  subTitle={"PA/ PPC"} title={"Paid Advertising"}  />
             <h3 className="my-5">Drawing from our extensive expertise in paid advertising, we craft customized campaigns tailored to diverse businesses across various sectors, effectively reaching untapped audiences on your behalf.</h3>
-            <p className="pb-2">In a landscape inundated with countless businesses yearly, relying solely on free digital marketing channels to stand out can be daunting. When traditional methods yield diminishing returns, delving into Paid Advertising becomes imperative.</p>
+            <p className="pb-2 services-p">In a landscape inundated with countless businesses yearly, relying solely on free digital marketing channels to stand out can be daunting. When traditional methods yield diminishing returns, delving into Paid Advertising becomes imperative.</p>
             <p>Paid advertising operates through real-time auctions where bids secure ad placement on specific platforms or networks, typically charging per click or impression. Amidst the myriad options available, selecting the most suitable avenue hinges on factors like industry, business type, and objectives. As specialists in Paid Advertising, we guide you through strategic decision-making to optimize your ad strategy effectively.</p>
             <div className="line-divide  my-5" ></div>
             <div className="flex items-center divided ">
@@ -46,13 +51,14 @@ const PaidAds = ()=>{
             </div>
         </div>
         <div className="flex px-4 sm:px-10   items-center divided  py-16">
-                <div className="title">
-                    <div>Why Hire an Agency for Ads?</div>
-                </div>
-                <div>
-                    <p>Maximize your marketing budget by entrusting our experts to steer the ship, sidestepping unnecessary time and resource wastage in discovering the most effective Paid Advertising options for your business. With our expertise, stay ahead of the curve, facilitating crucial growth and witnessing an upturn in your ROI and ROAS.</p>
-                </div>
+            <div className="title">
+                <div>Why Hire an Agency for Ads?</div>
             </div>
+            <div>
+                <p>Maximize your marketing budget by entrusting our experts to steer the ship, sidestepping unnecessary time and resource wastage in discovering the most effective Paid Advertising options for your business. With our expertise, stay ahead of the curve, facilitating crucial growth and witnessing an upturn in your ROI and ROAS.</p>
+            </div>
+        </div>
+        <Start/>
     </div>       
 )
 }

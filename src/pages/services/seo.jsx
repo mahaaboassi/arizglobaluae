@@ -1,15 +1,19 @@
+import { useEffect } from "react";
 import Banner from "../../components/banner"
 import HeadingForDynamic from "../../components/headingForDynamic"
+import Start from "../../components/start";
 
 
 const SEOPage = ()=>{
-    return(
-    <div className="web">
+    useEffect(()=>{
+        window.scrollTo({top: 0, behavior: 'smooth' });
+    },[])
+    return(<div className="web">
     <Banner firstPath={"Home"} link={"/"} secondPath={"SEO"} />
     <div className="px-4 sm:px-10 my-10">
         <HeadingForDynamic  subTitle={"Search Engine Optimisation"} title={"SEO"}  />
         <h3 className="my-5">Enhance your website’s natural search performance by implementing an SEO strategy backed by data analysis, ensuring a profitable outcome.</h3>
-        <p className="pb-2">We aim to enhance your website’s organic traffic and boost conversions through a continuous SEO approach. Our strategy prioritizes attracting users who are most likely to engage and convert by ensuring that top search results align with their search queries. We meticulously research and analyze your website, target audience, and competitors to inform our SEO campaign. Subsequently, we develop a plan to optimize content, improve design, and enhance site functionality while strategically promoting your website across online platforms.</p>
+        <p className="pb-2 services-p">We aim to enhance your website’s organic traffic and boost conversions through a continuous SEO approach. Our strategy prioritizes attracting users who are most likely to engage and convert by ensuring that top search results align with their search queries. We meticulously research and analyze your website, target audience, and competitors to inform our SEO campaign. Subsequently, we develop a plan to optimize content, improve design, and enhance site functionality while strategically promoting your website across online platforms.</p>
         <div className="line-divide  my-5" ></div>
         <div className="flex items-center divided ">
             <div className="title">
@@ -33,7 +37,7 @@ const SEOPage = ()=>{
                 }} className="line" ></div>
             })}
         </div>
-        <div className="content-bg px-4 sm:px-10 gap-2 md:gap-10 items-center">
+        <div  className="content-bg px-4 sm:px-10 gap-2 md:gap-10 ">
             <div className="w-full">
                 <h3 className="mb-5">Competitor Analysis</h3>
                 <p>Our process begins with thorough keyword and competitor analysis to evaluate your current search performance. Examining your competitors’ websites yields valuable insights on optimizing your own site effectively. This analysis identifies both strengths and weaknesses in your current site, as well as opportunities for enhancement.</p>
@@ -81,6 +85,7 @@ const SEOPage = ()=>{
 
     </div>
     </div>
+    <Start/>
 </div>       
 
 )

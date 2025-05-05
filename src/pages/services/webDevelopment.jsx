@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react"
 import Banner from "../../components/banner"
 import HeadingForDynamic from "../../components/headingForDynamic"
+import Start from "../../components/start"
 
 const WebsiteDevelopment = ()=>{
     const targetRef =  useRef()
@@ -14,7 +15,9 @@ const WebsiteDevelopment = ()=>{
             },
         //   { rootMargin }
         );
-    
+
+        window.scrollTo({top: 0, behavior: 'smooth' });
+
         observer.observe(targetRef.current);
     
         return () => {
@@ -111,12 +114,12 @@ const WebsiteDevelopment = ()=>{
     //     icon : ""
     // }
     ]
-    return(<div className="web">
+    return(<div >
         <Banner firstPath={"Home"} link={"/"} secondPath={"Website development"} />
         <div className="px-4 sm:px-10 my-10">
             <HeadingForDynamic  subTitle={"Web Design/ UX Design/ Website CMS"} title={"Website Development"}  />
             <h3 className="my-5">For over fifteen years, we’ve been captivating and involving users with visually striking websites.</h3>
-            <p>Entrance users with compelling visuals and ensure their engagement by facilitating easy navigation to desired content. While aesthetics inspire, user-friendliness is paramount for success. As a Dubai-based Web Design Agency, we advocate for harmonizing these elements for optimal user experience. Our proficient web designers will craft your website with the specific aim of meeting your objectives, whether it’s lead conversion, sales generation, or traffic driving.</p>
+            <p className="services-p">Entrance users with compelling visuals and ensure their engagement by facilitating easy navigation to desired content. While aesthetics inspire, user-friendliness is paramount for success. As a Dubai-based Web Design Agency, we advocate for harmonizing these elements for optimal user experience. Our proficient web designers will craft your website with the specific aim of meeting your objectives, whether it’s lead conversion, sales generation, or traffic driving.</p>
             <div className="line-divide  my-5" ></div>
             <div className="flex items-center divided ">
                 <div className="title">
@@ -171,6 +174,7 @@ const WebsiteDevelopment = ()=>{
                     })}
                 </div>}
             </div>
+            <Start/>
     </div>)
 }
 

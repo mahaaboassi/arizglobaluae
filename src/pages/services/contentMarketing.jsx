@@ -1,14 +1,19 @@
+import { useEffect } from "react";
 import Banner from "../../components/banner"
 import HeadingForDynamic from "../../components/headingForDynamic"
+import Start from "../../components/start";
 
 const ContentMarketing = ()=>{
+    useEffect(()=>{
+        window.scrollTo({top: 0, behavior: 'smooth' });
+    },[])
     return(
     <div className="web">
         <Banner firstPath={"Home"} link={"/"} secondPath={"Content marketing"} />
         <div className="px-4 sm:px-10 my-10">
             <HeadingForDynamic  subTitle={"Content Strategy/ Email Marketing"} title={"Content Marketing"}  />
             <h3 className="my-5">Content serves as a powerful means of connecting with your target audience, but its success requires proper guidance and direction.</h3>
-            <p>We specialize in assisting clients in crafting engaging content that drives audience interaction and secures new business. Content isn’t merely a sales tool; it’s aimed at attracting new users and raising brand awareness. Behind every successful content piece lies meticulous planning and a robust strategy to ensure it meets user needs. Content plays a vital role in your overarching marketing strategy, whether it’s boosting your social media presence or supporting your SEO efforts. We excel in content planning and identifying audience interests through keyword and competitor analysis. Our team creates unique and compelling content for dissemination across your marketing channels. Additionally, we offer support in updating and improving existing content to maximize its SEO potential.</p>
+            <p className="services-p">We specialize in assisting clients in crafting engaging content that drives audience interaction and secures new business. Content isn’t merely a sales tool; it’s aimed at attracting new users and raising brand awareness. Behind every successful content piece lies meticulous planning and a robust strategy to ensure it meets user needs. Content plays a vital role in your overarching marketing strategy, whether it’s boosting your social media presence or supporting your SEO efforts. We excel in content planning and identifying audience interests through keyword and competitor analysis. Our team creates unique and compelling content for dissemination across your marketing channels. Additionally, we offer support in updating and improving existing content to maximize its SEO potential.</p>
             <div className="line-divide  my-5" ></div>
             <div className="flex items-center divided ">
                 <div className="title">
@@ -52,6 +57,7 @@ const ContentMarketing = ()=>{
                     <p>Our proficient team of copywriters boasts expertise in crafting diverse types of content, spanning from concise social media copy to comprehensive technical brochures. We offer a comprehensive range of copywriting services to cater to our clients’ needs.</p>
                 </div>
             </div>
+            <Start/>
     </div>    
 )
 }

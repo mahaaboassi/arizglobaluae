@@ -2,9 +2,12 @@ import { Helmet } from "react-helmet-async"
 import Banner from "../components/banner"
 import CardNews from "../components/cardNews"
 import { news } from "../data/data"
+import { useEffect } from "react"
 
 const NewsPage =  ()=>{
-
+    useEffect(()=>{
+        window.scrollTo({top: 0, behavior: 'smooth' });
+    },[])
     return(<div className="news-page">
         <Helmet>
             <title>Insights & News | Ariz Global</title>

@@ -164,11 +164,17 @@ nav ul{
     height: 100%;
     align-items: center;
 }
+.menu-icon,.hidden-logo{
+    display: none;
+}
 nav ul li {
     position: relative;
     transition: 0.3s;
     font-size: var(--font-size-s);
     text-transform: capitalize;
+}
+.menu-container .arrow{
+    width: 20px !important;
 }
 .menu-open{
     position: absolute;
@@ -699,9 +705,9 @@ footer p{
         font-size: 5rem;
     }
     /* Web Development */
-    .bg{
+    /* .bg{
         height: 600px;
-    }
+    } */
     .content-bg{
         flex-wrap: wrap;
     }
@@ -723,11 +729,83 @@ footer p{
     .hero-section p{
         font-size: var(--font-size-xxs);
     }
+    /* Navbar */
+    .menu-container{
+        justify-content: end;
+    }
+    .menu-icon{
+        width: 20px;
+        display: flex;
+        cursor: pointer;
+    }
+    .hidden-logo{
+        display: flex;
+        justify-content: space-between;
+        background-color: var(--dark-color);
+    }
     nav{
         height: 80px;
     }
+
     nav ul{
-        display: none;
+       display: none;
+    }
+    nav ul.open-nav{
+        display: block;
+        position: fixed;
+        background-color: var(--light-color);
+        top: 0;
+        border: none !important;
+        color: var(--dark-color);
+        font-weight: 600;
+        left: 0;
+        right: 50%;
+        font-size: var(--font-size-l);
+        width: 0;
+        overflow: hidden;
+        padding: 0 !important;
+        animation: openNav 0.5s forwards linear;
+        
+    }
+    nav ul.open-nav li svg{
+        width: 30px;
+    }
+    nav ul.open-nav li{
+        margin-bottom: 10px;
+        padding-left: 10px;
+    }
+    nav ul.open-nav li::before{
+        background-color: unset;
+    }
+    .menu-open{
+        position: relative;
+        top: 0;
+        box-shadow: unset;
+
+    }
+    .menu-container .arrow{
+        width: 20px !important;
+        transform: rotate(-90deg);
+    }
+    .menu-container path{
+        fill: var(--dark-color);
+    }
+    .menu-open-active{
+        animation: openMenuSmall 0.5s forwards linear;
+    }
+    @keyframes openMenuSmall {
+        from{
+            height: 0;
+        }to{
+            height: 170px;
+        }
+    }
+    @keyframes openNav {
+        from{
+            width: 0;
+        }to{
+            width: 300px;
+        }
     }
     nav svg{
         width: 200px !important;
@@ -796,8 +874,8 @@ footer p{
        font-size: var(--font-size-s);
     }
     /* Web Development */
-    .bg{
+    /* .bg{
         height: 800px;
-    }
+    } */
 
 }
