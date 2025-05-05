@@ -1,8 +1,10 @@
-import { useState, useEffect } from "react"
+import { useState, useEffect, useRef } from "react"
 import { Link, NavLink } from "react-router-dom"
 
 const Navbar = ()=>{
     const [ isScroll , setIsScroll] = useState(false)
+    const [ isOpen, setIsOpen ] = useState(false)
+    const targetRef = useRef(null)
     useEffect(()=>{
         const handleScroll = () => {
             if (window.scrollY > 80) {
@@ -11,15 +13,21 @@ const Navbar = ()=>{
               setIsScroll(false); // Set it back to false when the scroll is less than 50px
             }
           };
-       
-          // Add event listener to handle scroll
-          window.addEventListener('scroll', handleScroll);
-      
-          // Cleanup the event listener on component unmount
-          return () => {
-            window.removeEventListener('scroll', handleScroll);
-          };
+        const handleClickOutside = (e) => {
+            if (targetRef.current && !targetRef.current.contains(e.target)) {
+                setIsOpen(false)
+            }
+        };
+        // Add event listener to handle scroll
+        window.addEventListener('scroll', handleScroll);
+        document.addEventListener("click", handleClickOutside);
+        // Cleanup the event listener on component unmount
+        return () => {
+        window.removeEventListener('scroll', handleScroll);
+        document.removeEventListener("click", handleClickOutside);
+        };
     },[])
+
     const data = [{
         name : "Home",
         link : "/",
@@ -30,29 +38,29 @@ const Navbar = ()=>{
         link : "/about",
         children : []
     },
-    // {
-    //     name : "sevices",
-    //     link : "",
-    //     children : [{
-    //         name : "Content Marketing",
-    //         link :"/content-marketing"
-    //     },{
-    //         name : "Graphic Design",
-    //         link :"/graphic-design"
-    //     },{
-    //         name : "Paid Advertising",
-    //         link :"/paid-advertising"
-    //     },{
-    //         name : "Social Media Marketing",
-    //         link :"/social-media-marketing"
-    //     },{
-    //         name : "SEO",
-    //         link :"/seo"
-    //     },{
-    //         name : "Website Development",
-    //         link :"/website-development"
-    //     }]
-    // },
+    {
+        name : "sevices",
+        link : "",
+        children : [{
+            name : "Content Marketing",
+            link :"/content-marketing"
+        },{
+            name : "Graphic Design",
+            link :"/graphic-design"
+        },{
+            name : "Paid Advertising",
+            link :"/paid-advertising"
+        },{
+            name : "Social Media Marketing",
+            link :"/social-media-marketing"
+        },{
+            name : "SEO",
+            link :"/seo"
+        },{
+            name : "Website Development",
+            link :"/website-development"
+        }]
+    },
     {
         name : "news",
         link : "/news",
@@ -195,6 +203,10 @@ const Navbar = ()=>{
     <path d="M305.4 54.0611V54.75H299.5V47.5167H305.3V48.2056H300.4V50.7889H304.7V51.4778H300.4V54.1472H305.4V54.0611Z" fill="#C3996B"/>
     <path d="M308.4 47.4305H311.8C312.7 47.4305 313.5 47.6028 314.2 47.8611C314.9 48.2055 315.4 48.6361 315.8 49.1528C316.2 49.6694 316.4 50.3583 316.4 51.0472C316.4 51.7361 316.2 52.3389 315.8 52.9417C315.4 53.4583 314.9 53.8889 314.2 54.2333C313.5 54.5778 312.7 54.6639 311.8 54.6639H308.4V47.4305ZM311.8 54.0611C312.5 54.0611 313.2 53.975 313.7 53.7166C314.3 53.4583 314.7 53.1139 315 52.6833C315.3 52.2528 315.5 51.7361 315.5 51.1333C315.5 50.5305 315.3 50.0139 315 49.5833C314.7 49.1528 314.3 48.8083 313.7 48.55C313.1 48.2916 312.5 48.2055 311.8 48.2055H309.3V54.1472H311.8V54.0611Z" fill="#C3996B"/>
     </svg>
+
+    const arrow = <svg xmlns="http://www.w3.org/2000/svg" width="15" height="8" viewBox="0 0 24 15" fill="none">
+    <path d="M3.2025 0.499999L12 9.15317L20.7975 0.5L23.5 3.16397L12 14.5L0.500002 3.16397L3.2025 0.499999Z" fill="white"/>
+    </svg>
     
     return(<nav className={`px-4 sm:px-10 ${isScroll?"scroll":""}`}>
         <div>
@@ -207,16 +219,21 @@ const Navbar = ()=>{
         </div>
         <div className="h-full">
             <ul className="gap-5 px-5">
-                {/* {data.map((e,idx)=>(<NavLink className={({ isActive }) => (isActive ? 'active' : '')} key={`Navbar_Label_${e.name}_${idx}`} to={e.link}>
-                    <li>{e.name}</li>
-                </NavLink>))} */}
                 {data.map((e, idx) =>
                     e.children.length>0 ? (
-                    <Link   key={idx} to={"/#services"}>
-                        <li className="menu-container">
-                            {e.name}
+                    // <Link   key={idx} to={"/#services"}>
+                        <li ref={targetRef}  onClick={()=>{setIsOpen(!isOpen)}} className="menu-container cursor-pointer">
+                            <div className="items-center flex gap-1">{e.name}
+                            {arrow}</div>
+                            
+                            <div  className={`menu-open  ${isOpen?"menu-open-active p-2":""}`}>
+                                {e.children.map((child, index)=>(<NavLink key={`Menu_Link_${idx}_${index}`} to={child.link}>
+                                <div className="mb-2 child-menu">{child.name} </div>
+                                    
+                                </NavLink>))}
+                            </div>
                         </li>
-                    </Link>
+                    // </Link>
                     ) : 
                     (
                     <NavLink key={idx} to={e.link} className={({ isActive }) => (isActive ? "active" : "")}>

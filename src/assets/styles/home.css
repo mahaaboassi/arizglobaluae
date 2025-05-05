@@ -168,6 +168,36 @@ nav ul li {
     position: relative;
     transition: 0.3s;
     font-size: var(--font-size-s);
+    text-transform: capitalize;
+}
+.menu-open{
+    position: absolute;
+    top: 65px;
+    right: 0px;
+    background-color: var(--light-color);
+    color: var(--dark-color);
+    border-radius: 10px;
+    font-size: var(--font-size-xs);
+    font-weight: 500;
+    width: 200px;
+    height: 0;
+    overflow: hidden;
+}
+.child-menu{
+    transition: 0.3s;
+}
+.child-menu:hover{
+    color : var(--main-color)
+}
+.menu-open-active{
+    animation: openMenu 0.6s forwards ;
+}
+@keyframes openMenu {
+    from{
+        height: 0;
+    }to{
+        height: 200px;
+    }
 }
 nav ul li::before{
     content: "";
@@ -182,6 +212,9 @@ nav ul li::before{
 }
 nav ul li:hover{
     color: var(--main-color);
+}
+nav ul li:hover path{
+    fill: var(--main-color);
 }
 nav ul li:hover::before{
     width: 100%;
@@ -314,6 +347,33 @@ nav ul .active{
     left: 50%;
     top: 0;
     transform: translateX(-50%);
+    font-weight: 800;
+
+}
+/* heading dynamic */
+.heading-dynamic{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+}
+.heading-dynamic h1{
+    color: var(--dark-color);
+    font-size: var(--font-size-3xl);
+    text-align: center;
+    font-weight: 600;
+}
+.heading-dynamic h2{
+    color: var(--main-color);
+    font-size: var(--font-size-s);
+    text-align: center;
+}
+.heading-dynamic h3{
+    color: rgba(129, 129, 129, 0.13);
+    font-size: 4rem !important;
+    position: absolute;
+    width: 100%;
+    text-align: center;
     font-weight: 800;
 
 }
@@ -638,6 +698,16 @@ footer p{
     .heading h5{
         font-size: 5rem;
     }
+    /* Web Development */
+    .bg{
+        height: 600px;
+    }
+    .content-bg{
+        flex-wrap: wrap;
+    }
+    .content-bg p{
+        font-size: var(--font-size-xxs) !important;
+    }
 }
 @media (max-width:600px) {
     /* Hero Section */
@@ -671,6 +741,9 @@ footer p{
     }
     .card-sevices h3{
         margin: 10px 0; 
+    }
+    .divided{
+        flex-wrap: wrap;
     }
 }
 @media (max-width:450px) {
@@ -712,6 +785,9 @@ footer p{
         font-size: 4rem ;
 
     }
+    .heading-dynamic h1{
+        font-size: var(--font-size-xxl);
+    }
     /* faq */
     .faq h2{
         font-size: var(--font-size-xxl);
@@ -719,4 +795,9 @@ footer p{
     .faq h4{
        font-size: var(--font-size-s);
     }
+    /* Web Development */
+    .bg{
+        height: 800px;
+    }
+
 }
