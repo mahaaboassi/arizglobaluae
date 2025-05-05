@@ -19,7 +19,7 @@ const NewsPage =  ()=>{
                 return <div style={{
                     animationDelay:`${idx * 0.1}s`
                 }} className="card-news-animation" key={`News_Page_${e.title}_${idx}`}>
-                <CardNews isFromNewsPage={true} description={e.description} title={e.title} image={e.image} />
+                <CardNews link={e.link} isFromNewsPage={true} description={e.description} title={e.title} image={e.image} />
             </div>
             })}
 

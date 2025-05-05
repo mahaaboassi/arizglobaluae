@@ -212,8 +212,8 @@ const Navbar = ()=>{
                 </NavLink>))} */}
                 {data.map((e, idx) =>
                     e.children.length>0 ? (
-                    <Link to={"/#services"}>
-                        <li className="menu-container" key={idx}>
+                    <Link   key={idx} to={"/#services"}>
+                        <li className="menu-container">
                             {e.name}
                         </li>
                     </Link>

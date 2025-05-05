@@ -38,11 +38,11 @@ const News = ()=>{
                     },
                   }}
                 >
-                                {
+                  {
                    news.map((e,idx)=>(<SwiperSlide className="sm:p-5 lg:p-10"  key={`News_${e.title}_${idx}`}>
-                        <CardNews description={e.description}  image={e.image} title={e.title} />
+                        <CardNews link={e.link} description={e.description}  image={e.image} title={e.title} />
                    </SwiperSlide>)) 
-                }
+                  }
 
             </Swiper>
 

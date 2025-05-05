@@ -12,7 +12,7 @@ const Page_404 = ()=>{
                 {Array.from({ length: 1000 }).map((_, idx) => {
                         const height = Math.floor(Math.random() * 400) + 100; // 100px to 500px
                         const delay = Math.random() * 3; // 0s to 3s
-                    return <div key={`Line_${idx}`}  style={{
+                    return <div key={`Line_404_Page_${idx}`}  style={{
                         height: `${height}px`,
                         animationDelay: `${delay}s`,
                       }} className="line" ></div>

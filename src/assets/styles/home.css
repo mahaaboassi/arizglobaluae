@@ -335,6 +335,9 @@ nav ul .active{
     flex-direction: column;
     border-radius: 10px;
 }
+.card-news:hover h4{
+    color : var(--yellow-color)
+}
 .card-news:hover img{
     transform: scale(1.2);
 } 
@@ -373,6 +376,7 @@ nav ul .active{
     font-size: var(--font-size-l);
     color: var(--second-color);
     font-weight: 700;
+    transition: 0.3s;
 }
 .card-news p{
     font-size: var(--font-size-xs);
@@ -444,6 +448,12 @@ footer p{
     outline: none;
     height: 100%;
     padding: 0 15px;
+}
+.link-hover{
+    transition: 0.3s;
+}
+.link-hover:hover{
+    color: var(--main-color);
 }
 /* Whatsapp Icon */
 .whatsapp-icon{

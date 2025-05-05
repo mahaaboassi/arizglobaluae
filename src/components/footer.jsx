@@ -44,8 +44,10 @@ const Footer = ()=>{
                 </div>
                 <div>
                     <h3>New Feeds</h3>
-                    <div className="flex flex-col gap-2" >
-                      {news.map((e,idx)=>(<div  key={`Footer_${e.title}_${idx}`}>{e.title}</div>))}
+                    <div className="flex  flex-col gap-2" >
+                      {news.map((e,idx)=>(<Link key={`Footer_${e.title}_${idx}`} to={`/news/${e.link}`}>
+                        <div className="link-hover" >{e.title}</div>
+                      </Link>))}
                     </div>
                     
                 </div>

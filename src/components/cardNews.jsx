@@ -1,7 +1,12 @@
-const CardNews = ({image,title,description,isFromNewsPage})=>{
-    return(<div  className={`card-news p-0.5 gap-4  ${isFromNewsPage?"shadow-xl py-5 card-news-page":""}`} >
+import { Link } from "react-router-dom"
+
+const CardNews = ({image,title,description,isFromNewsPage,link})=>{
+    return(<div  className={`card-news p-0.5 gap-4 ${isFromNewsPage?"shadow-xl py-5 card-news-page":""}`} >
         {isFromNewsPage?"":<div className="card-img-news">
-            <img src={image} alt={title} />
+            
+            <Link to={`/news/${link}`}>
+                <img src={image} alt={title} />
+            </Link>
         </div>}
         <div className="category px-5 flex items-center gap-2">
         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 123 123" fill="none">
@@ -16,9 +21,11 @@ const CardNews = ({image,title,description,isFromNewsPage})=>{
             </svg>
             Ariz
         </div>
-        <h4 className="px-5">
-            {title}
-        </h4>
+        <Link to={`/news/${link}`}>
+            <h4 className="px-5 cursor-pointer">
+                {title}
+            </h4>
+        </Link>
         <p className="px-5 pb-8">{description.substring(0,60)+"..."}</p>
 
        </div>)
