@@ -2,12 +2,18 @@ import { useEffect } from "react";
 import Banner from "../../components/banner"
 import Start from "../../components/start"
 import HeadingForDynamic from "../../components/headingForDynamic";
+import { Helmet } from "react-helmet-async";
 
 const GraphicDesign = ()=>{
     useEffect(()=>{
         window.scrollTo({top: 0, behavior: 'smooth' });
     },[])
     return( <div className="web">
+    <Helmet>
+        <title>Graphic Design | Ariz Global</title>
+        <meta name="description" content="We provide top-notch graphic design services encompassing brand identity and print design for our clients." />
+        <link rel="canonical" href="https://arizglobal.com/graphic-design" />
+    </Helmet>
     <Banner firstPath={"Home"} link={"/"} secondPath={"Graphic Design"} />
     <div className="px-4 sm:px-10 my-10">
         <HeadingForDynamic  subTitle={"GD/ Creative Designing"} title={"Graphic Design"}  />

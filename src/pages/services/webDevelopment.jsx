@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react"
 import Banner from "../../components/banner"
 import HeadingForDynamic from "../../components/headingForDynamic"
 import Start from "../../components/start"
+import { Helmet } from "react-helmet-async"
 
 const WebsiteDevelopment = ()=>{
     const targetRef =  useRef()
@@ -115,6 +116,11 @@ const WebsiteDevelopment = ()=>{
     // }
     ]
     return(<div >
+        <Helmet>
+            <title>Website Development | Ariz Global</title>
+            <meta name="description" content="For over fifteen years, we’ve been captivating and involving users with visually striking websites." />
+            <link rel="canonical" href="https://arizglobal.com/website-development" />
+        </Helmet>
         <Banner firstPath={"Home"} link={"/"} secondPath={"Website development"} />
         <div className="px-4 sm:px-10 my-10">
             <HeadingForDynamic  subTitle={"Web Design/ UX Design/ Website CMS"} title={"Website Development"}  />

@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import Banner from "../../components/banner"
 import HeadingForDynamic from "../../components/headingForDynamic"
 import Start from "../../components/start";
+import { Helmet } from "react-helmet-async";
 
 
 const SEOPage = ()=>{
@@ -9,6 +10,11 @@ const SEOPage = ()=>{
         window.scrollTo({top: 0, behavior: 'smooth' });
     },[])
     return(<div className="web">
+    <Helmet>
+        <title>SEO | Ariz Global</title>
+        <meta name="description" content="Enhance your website’s natural search performance by implementing an SEO strategy backed by data analysis, ensuring a profitable outcome." />
+        <link rel="canonical" href="https://arizglobal.com/seo" />
+    </Helmet>
     <Banner firstPath={"Home"} link={"/"} secondPath={"SEO"} />
     <div className="px-4 sm:px-10 my-10">
         <HeadingForDynamic  subTitle={"Search Engine Optimisation"} title={"SEO"}  />

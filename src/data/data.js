@@ -18,7 +18,7 @@ export const news = [{
             <p>The businesses of the future in Dubai will be those that see marketing as one pillar within a much larger framework for success.</p>
             <div class="parent">
             <div class="first" style="cursor: pointer;"><a href="https://gulfnews.com/gn-focus/the-future-of-business-growth-in-dubai-beyond-just-marketing-1.500066860" target="_blank" rel="noopener">
-            <img decoding="async" width="600" height="600" class="alignnone wp-image-2242" src="${img_2}" alt="" srcset="http://localhost/arizglobal/wp-content/uploads/2025/04/Gulf-news-1.png 600w, http://localhost/arizglobal/wp-content/uploads/2025/04/Gulf-news-1-180x180.png 180w" sizes="(max-width: 600px) 100vw, 600px"></a></div>
+            <img decoding="async" width="600" height="600" class="alignnone wp-image-2242" src="${img_2}" alt="" sizes="(max-width: 600px) 100vw, 600px"></a></div>
             <div class="second">
             <p>As the CEO of Ariz Global, a 360-degree marketing and business solutions agency, I’ve seen firsthand how companies in Dubai are evolving. Many businesses focus on short-term wins — ads, social media posts, and promotions — but overlook the deeper transformation needed to create sustainable, long-term growthThe truth is, scaling a business in Dubai today requires more than just visibility. </p>
             <p>The truth is, scaling a business in Dubai today requires more than just visibility. It requires business transformation, a blend of strategy, execution, and optimization across every touchpoint of your customer journey.</p>

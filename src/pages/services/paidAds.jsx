@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import Banner from "../../components/banner"
 import HeadingForDynamic from "../../components/headingForDynamic"
 import Start from "../../components/start";
+import { Helmet } from "react-helmet-async";
 
 const PaidAds = ()=>{
     useEffect(()=>{
@@ -9,6 +10,11 @@ const PaidAds = ()=>{
     },[])
     return(
     <div className="web">
+        <Helmet>
+            <title>Paid Advertising | Ariz Global</title>
+            <meta name="description" content="Drawing from our extensive expertise in paid advertising, we craft customized campaigns tailored to diverse businesses across various sectors, effectively reaching untapped audiences on your behalf." />
+            <link rel="canonical" href="https://arizglobal.com/paid-advertising" />
+        </Helmet>
         <Banner firstPath={"Home"} link={"/"} secondPath={"Paid advertising"} />
         <div className="px-4 sm:px-10 my-10">
             <HeadingForDynamic  subTitle={"PA/ PPC"} title={"Paid Advertising"}  />

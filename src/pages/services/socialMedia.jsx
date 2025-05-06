@@ -2,12 +2,18 @@ import { useEffect } from "react";
 import Banner from "../../components/banner"
 import Start from "../../components/start"
 import HeadingForDynamic from "../../components/headingForDynamic";
+import { Helmet } from "react-helmet-async";
 
 const SocialMedia = ()=>{
     useEffect(()=>{
         window.scrollTo({top: 0, behavior: 'smooth' });
     },[])
     return(<div>
+        <Helmet>
+            <title>Social Media Marketing | Ariz Global</title>
+            <meta name="description" content="We strategize, execute, and deliver dynamic and captivating social media marketing plans tailored for businesses." />
+            <link rel="canonical" href="https://arizglobal.com/social-media-marketing" />
+        </Helmet>
     <Banner firstPath={"Home"} link={"/"} secondPath={"social Media"} />
     <div className="px-4 sm:px-10 my-10">
         <HeadingForDynamic  subTitle={"SMM"} title={"Social Media Marketing"}  />

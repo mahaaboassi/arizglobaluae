@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import Banner from "../../components/banner"
 import HeadingForDynamic from "../../components/headingForDynamic"
 import Start from "../../components/start";
+import { Helmet } from "react-helmet-async";
 
 const ContentMarketing = ()=>{
     useEffect(()=>{
@@ -9,6 +10,11 @@ const ContentMarketing = ()=>{
     },[])
     return(
     <div className="web">
+        <Helmet>
+            <title>Content Marketing | Ariz Global</title>
+            <meta name="description" content="Content serves as a powerful means of connecting with your target audience, but its success requires proper guidance and direction." />
+            <link rel="canonical" href="https://arizglobal.com/content-marketing" />
+        </Helmet>
         <Banner firstPath={"Home"} link={"/"} secondPath={"Content marketing"} />
         <div className="px-4 sm:px-10 my-10">
             <HeadingForDynamic  subTitle={"Content Strategy/ Email Marketing"} title={"Content Marketing"}  />
